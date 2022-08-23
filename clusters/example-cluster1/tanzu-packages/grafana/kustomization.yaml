@@ -4,13 +4,13 @@ kind: Kustomization
 generatorOptions:
   disableNameSuffixHash: true
 resources:
-- fluent-bit-package-install.yaml
+- grafana-package-install.yaml
 secretGenerator:
-- name: fluent-bit-packages-values
+- name: grafana-packages-values
   namespace: packages
   files:
-  - fluent-bit-data-values.yaml
+  - grafana-data-values.yaml
   type: Opaque
   options:
     annotations:
-      tkg.tanzu.vmware.com/tanzu-package: fluent-bit-packages
+      tkg.tanzu.vmware.com/tanzu-package: grafana-packages
